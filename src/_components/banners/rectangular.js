@@ -11,7 +11,7 @@ const BannerCont = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: ${props => props.theme.main.primaryColor};
+  font-weight: 300;
 `
 const Title = styled.p`
   text-align: center;

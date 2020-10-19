@@ -23,7 +23,7 @@ export default {
     },      
   },
   main:{
-    primaryColor: "#FF0101",
+    primaryColor: "#FF605B",
     secondaryColor: "#ffffff",
     favicon: "",
     logo:{

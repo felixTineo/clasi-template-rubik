@@ -14,11 +14,11 @@ const RatesCont = styled.ul`
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color: #919191;
+  color: #FFFFFF;
   @media(min-width: 768px){
     font-weight: normal;
     justify-content: flex-end;
-    color: ${props => props.theme.main.primaryColor};
+    color: #FFFFFF;
   }
 `
 const RateItem = styled.li`

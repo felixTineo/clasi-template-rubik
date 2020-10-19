@@ -3,25 +3,22 @@ import styled from 'styled-components';
 
 const DefaultOption = styled.option`
   color: #212121;
-  font-family: 'Rubik', sans-serif;
 `
 const Option = styled.option`
   color: #212121;
   font-size: 1rem;
-  font-family: 'Rubik', sans-serif;
 `
 
 const Select = styled.select`
   border: none;
   outline: none;
   font-size: 1rem;
-  font-family: 'Rubik', sans-serif;
   color: ${props => props.primary ? props.theme.main.primaryColor : "#212121"};
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; 
-  background-color: #fff;
-  border-radius: 6px;
+  background-color: transparent;
+  border-radius: 3px;
   padding: 5px;
   height: 44px;
   width: 100%;
@@ -31,14 +28,15 @@ const Select = styled.select`
   background-repeat: no-repeat;
   background-position: right center;
   margin-bottom: 1rem;
-  color: #878787;
+  color: #fff;
   cursor: pointer;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12);
+  //box-shadow: 0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12);
+  border: ${props => props.gray ? "1px solid #EBEBEB" : "none" };
   &::-ms-expand{
     background: transparent;
   }  
   @media(min-width: 768px){
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     box-shadow: ${props => props.shadow ? "0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)" : "none"};
   }
 `

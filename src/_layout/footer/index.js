@@ -22,7 +22,7 @@ const FooterRightsCont = styled.div`
 const OfficeInfoCont = styled.ul`
   padding: 0;
   margin: 0;
-  margin-top: 2rem;
+  //margin-top: 2rem;
   list-style: none;
 `
 const OfficeInfo = styled.li`
@@ -142,38 +142,55 @@ export default ()=> {
       <MainFooter>
         <Container>
           <Row>
-            <Col xs={12} md={3}>
-              <GatsbyLink to="/" style={{ textDecoration: 'none' }}>
-                <LogoCont>
-                  {
-                    state.main.logo.isImage
-                      ?<Logo src="/logo.svg" alt="logo" />
-                      :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
-                  }
-                </LogoCont>                        
-              </GatsbyLink>         
+            <Col xs={12} md={4}>
+              <Row>
+                <Col xs={12}>
+                <GatsbyLink to="/" style={{ textDecoration: 'none' }}>
+                  <LogoCont>
+                    {
+                      state.main.logo.isImage
+                        ?<Logo src="/logo.svg" alt="logo" />
+                        :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
+                    }
+                  </LogoCont>                        
+                </GatsbyLink>         
+                </Col>
+                <Col xs={12}>
+                  <OfficeInfoCont>
+                    <OfficeInfo>
+                      {office.address}
+                    </OfficeInfo>
+                    <OfficeInfo>
+                      {`(${office.phone.countryCode}-${office.phone.areaCode}) ${office.phone.phoneNumber} / (${office.mobile.countryCode}-${office.mobile.areaCode}) ${office.mobile.phoneNumber}`}
+                    </OfficeInfo>
+                    <OfficeInfo>
+                      {office.email}
+                    </OfficeInfo>
+                  </OfficeInfoCont>                                
+                </Col>
+              </Row>
             </Col>
-            <Col xs={12} md={3}>
+            <Col xs={12} md={4}>
               <NavCont>
                 <Row>
-                  <Col xs={6} md={12}>
+                  <Col xs={6} md={6}>
                     <NavLink href="#about">
                       Nosotros
                     </NavLink>
                   </Col>
-                  <Col xs={6} md={12}>
+                  <Col xs={6} md={6}>
                     <NavLink href="#properties">
                       Propiedades
                     </NavLink>                  
                   </Col>
                   <Visible md xs xxl lg xl>
-                    <Col xs={6} md={12}>
+                    <Col xs={6} md={6}>
                       <NavLink href="#news">
                         Noticias
                       </NavLink>                  
                     </Col>
                   </Visible>
-                  <Col xs={6} md={12}>
+                  <Col xs={6} md={6}>
                     <NavLink href="#contact">
                       Contacto
                     </NavLink>                  
@@ -181,20 +198,7 @@ export default ()=> {
                 </Row>
               </NavCont>
             </Col>         
-            <Col xs={12} md={3}>
-              <OfficeInfoCont>
-                <OfficeInfo>
-                  {office.address}
-                </OfficeInfo>
-                <OfficeInfo>
-                  {`(${office.phone.countryCode}-${office.phone.areaCode}) ${office.phone.phoneNumber} / (${office.mobile.countryCode}-${office.mobile.areaCode}) ${office.mobile.phoneNumber}`}
-                </OfficeInfo>
-                <OfficeInfo>
-                  {office.email}
-                </OfficeInfo>
-              </OfficeInfoCont>              
-            </Col>
-            <Col xs={12} md={3}>
+            <Col xs={12} md={4}>
               <Row>
                 <Col xs={12}>
                 </Col>                            

@@ -8,7 +8,7 @@ const SectionCont = styled.div`
   margin-top: ${props => props.noMargin ? 0 : "4rem"};
   padding: 2rem 0;
   //background-color: ${props => props.theme.main.primaryColor};
-  color: ${props => props.theme.main.primaryColor};
+  //color: ${props => props.theme.main.primaryColor};
 `
 const TextCont = styled.div`
   

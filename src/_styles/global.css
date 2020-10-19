@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
 
 html{
   font-size: 16px;
@@ -10,7 +10,7 @@ html{
 }
 
 body{
-  font-family: 'Lato', sans-serif;
+  font-family: 'Rubik', sans-serif;
   padding: 0;
   margin: 0;
   color: #212121;
@@ -37,7 +37,8 @@ input, select{
 }
 
 h1, h2, h3, h4, h5, h6{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-size: 300;
 }
 
 h1{
@@ -62,7 +63,7 @@ h2{
 }
 
 .carousel-back-button{
-  right: 220px;
+  right: 100px;
   background-color: transparent;
 }
 
@@ -104,14 +105,14 @@ h2{
 .carousel-text-back-button{
   top: auto;
   bottom: 0 !important;
-  left: auto;
-  right: 3rem;
+  left: 0;
+  right: auto;
 }
 
 .carousel-text-next-button{
   top: auto;
   bottom: 0 !important;
-  right: 0;
+  left: 6rem;
 }
 
 .carousel-text-dot{
