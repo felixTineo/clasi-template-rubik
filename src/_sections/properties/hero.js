@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
-import { SearchForm as FormProperty } from '../../_components/forms';
+import { FormProperty } from '../../_components/forms';
 import { useWindowSize } from '../../_hooks';
 import { PlusCircleOutlined, MinusCircleOutlined } from '@ant-design/icons';
 
