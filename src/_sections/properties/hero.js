@@ -1,99 +1,112 @@
-import React, {useState} from 'react';
+import React, { useContext, Fragment, useState } from 'react';
 import styled from 'styled-components';
-import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
-import { FormProperty } from '../../_components/forms';
-import { useWindowSize } from '../../_hooks';
-import { PlusCircleOutlined, MinusCircleOutlined } from '@ant-design/icons';
+import Context from '../../_context';
+import { FormProperty, FilterForm } from '../../_components/forms'
+import { Container } from 'react-grid-system';
+import RateBar from '../../_layout/header/rate-bar';
+import { DownOutlined, UpOutlined } from '@ant-design/icons';
 
-const SectionCont = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
-  padding: 2rem;
-  margin-top: 4rem;
-  @media(min-width: 576px){
-    margin-top: 0;
-  }
+const VeryMainCont = styled.section`
+  background-image: url(${props => props.theme.home.hero.background});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  //color: #fff;
 `
-const Header = styled.header`
-  margin: 1rem 0;
+const MainCont = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-const Title = styled.h1`
-  color: #fff;
-  margin: 0;
-`
-const IconButton = styled.button`
-  outline: none;
-  background-color: transparent;
-  border: none;
-  color: rgba(255, 255, 255, .5);
-  transition: 250ms ease;
-  &:hover{
-    color: #fff;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  @media(min-width: 768px){
+    min-height: calc(100vh - 81px);    
   }
 `
-const ButtonContainer = styled.footer`
- display: flex;
- justify-content: center;
- padding: 1rem;
+
+const Title = styled.h1`
+  font-weight: 300;
+  max-width: 95%;
+  font-size: 32px;
+  text-align: left;
+  @media(min-width: 768px){
+    max-width: 50%;
+    font-size: 50px;
+  }
 `
-
-
+const DownButton = styled.div`
+  //text-decoration: none;
+  position: absolute;
+  bottom: 30px;
+`
+const SvgCont = styled.svg`
+  stroke: #fff;
+  transition: 250ms ease;
+  ${DownButton}:hover & {
+    stroke: ${props => props.theme.main.primaryColor};
+  }
+`
+const MoreButton = styled.button`
+  margin: 2rem 0;
+  border: none;
+  background: transparent;
+  color: ${props => props.theme.main.primaryColor};
+  transition: 250ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    filter: saturate(5.5);
+  }
+`
 
 export default ()=> {
-  const size = useWindowSize();
+  const state = useContext(Context);
   const [filter, setFilter] = useState(false);
   return(
-    <Container>
-      <SectionCont>
-        <Header>
-          <Title>Propiedades</Title>
-          <Hidden xs>
-            {
-              filter
-              ?(
-                <IconButton onClick={()=> setFilter(false)}>
-                <MinusCircleOutlined style={{ marginRight: 8 }} />
-                  Menos filtros
-                </IconButton>
-              )
-              :(
-                <IconButton onClick={()=> setFilter(true)}>
-                  <PlusCircleOutlined style={{ marginRight: 8 }} />
-                  Más filtros
-                </IconButton>              
-              )
-            }
-          </Hidden>
-        </Header>
-        <Row align="center">
-          <Col xs={12}>
-            <FormProperty filter={filter} />
-          </Col>
-          <Visible xs>
-            <Col xs={12}>
-              <ButtonContainer>
-                {
-                  filter
-                  ?(
-                    <IconButton onClick={()=> setFilter(false)}>
-                      <MinusCircleOutlined style={{ marginRight: 8 }} />
-                      Menos filtros
-                    </IconButton>
-                  )
-                  :(
-                    <IconButton onClick={()=> setFilter(true)}>
-                      <PlusCircleOutlined style={{ marginRight: 8 }} />
-                      Más filtros
-                    </IconButton>              
-                  )
-                }            
-              </ButtonContainer>              
-            </Col>            
-          </Visible>
-        </Row>
-      </SectionCont>
-    </Container>
+    <Fragment>
+      <VeryMainCont>
+        <Container>
+        <MainCont>
+          <Title>
+            {state.home.hero.title}
+          </Title>
+          <FormProperty shadow />
+          <DownButton href="#properties">
+            <RateBar />
+  {/*          <SvgCont width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="15" cy="15" r="14.5"/>
+              <path d="M19.2426 14L15 18.2427L10.7574 14" strokeLinecap="round" strokeLinejoin="round"/>
+    </SvgCont>*/}
+          </DownButton>
+        </MainCont>
+        </Container>      
+      </VeryMainCont>
+      <Container>
+        <MoreButton onClick={()=> setFilter(!filter)}>
+          {
+            filter
+            ?(
+              <Fragment>
+                Menos filtros
+                <UpOutlined style={{ marginLeft: 8 }} />        
+              </Fragment>
+            )
+            :(
+              <Fragment>
+                Más filtros
+                <DownOutlined style={{ marginLeft: 8 }} />              
+              </Fragment>              
+            )
+          }
+        </MoreButton>
+        {
+          filter && (
+            <FilterForm shadow/>
+          )
+        }
+      </Container>
+    </Fragment>
   )
 }

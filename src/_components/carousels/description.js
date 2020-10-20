@@ -10,7 +10,7 @@ const DescriptioneCont = styled.div`
   //color: #fff;
 `
 const DescriptionTitle = styled.h2`
-  
+  color: ${props => props.theme.main.primaryColor};
 `
 const DescriptionDescription = styled.p`
 

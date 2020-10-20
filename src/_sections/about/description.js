@@ -36,12 +36,7 @@ export default ()=> {
   return(
     <Container>
       <Row nogutter>
-        <Col xs={12} md={4}>
-          <ImageContainer>
-            <Image src={state.description.background} alt="nuestra empresa" />
-          </ImageContainer>
-        </Col>
-        <Col xs={12} md={8}>
+        <Col xs={12} md={12}>
           <Carousel>
             <CarouselInnerCont>
               <DescCarousel />

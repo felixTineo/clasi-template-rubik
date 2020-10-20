@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { PropertyCard as Card } from '../../_components/cards';
 import OfficeContext from '../../_context';
+import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 
 const query = (officeId)=> `
   query {
@@ -41,7 +42,11 @@ const NavArrow = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
+  color: #919191;
   transition: 250ms ease;
+  &:hover{
+    color: ${props => props.theme.main.primaryColor};
+  }
 `
 const NavNumber = styled(NavArrow)`
   width: 30px;
@@ -50,15 +55,7 @@ const NavNumber = styled(NavArrow)`
   color: #919191;
   margin: 0 1rem;
   &:hover{
-    color: #fff;
-    background-color: ${props => props.theme.main.primaryColor};
-  }
-`
-const SvgCont = styled.svg`
-  fill: #919191;
-  transition: 250ms ease;
-  ${NavArrow}:hover &{
-    fill: ${props => props.theme.main.primaryColor};
+    color: ${props => props.theme.main.primaryColor};
   }
 `
 
@@ -97,9 +94,7 @@ export default ()=> {
           <Col xs={12}>
             <NavPaginate>
               <NavArrow>
-                <SvgCont width="8" height="14" fill="none" version="1.1" viewBox="0 0 8 14">
-                  <path d="m0.28783 6.3069 6.0345-6.0196c0.38387-0.38312 1.0062-0.38312 1.3899 0 0.38371 0.38278 0.38371 1.0036 0 1.3863l-5.3396 5.3264 5.3394 5.3262c0.38371 0.383 0.38371 1.0037 0 1.3865-0.38371 0.3829-1.006 0.3829-1.3899 0l-6.0345-6.0197c-0.19186-0.19148-0.28767-0.44217-0.28767-0.69299 0-0.25094 0.096005-0.50181 0.28783-0.6932z"/>                  
-                </SvgCont>
+                <ArrowLeftOutlined />
               </NavArrow>
               <NavNumber>
                 1
@@ -117,9 +112,7 @@ export default ()=> {
                 5
               </NavNumber>
               <NavArrow>
-                <SvgCont width="8" height="14" fill="none" version="1.1" viewBox="0 0 8 14">
-                  <path d="m7.7122 7.6931-6.0345 6.0196c-0.38387 0.3831-1.0062 0.3831-1.3899 0-0.38371-0.3828-0.38371-1.0036 0-1.3864l5.3396-5.3264-5.3394-5.3262c-0.38371-0.38293-0.38371-1.0037 0-1.3865 0.38371-0.38293 1.0061-0.38293 1.3899 0l6.0345 6.0197c0.19185 0.19148 0.28767 0.44217 0.28767 0.69299 0 0.25094-0.096 0.50181-0.28783 0.6932z"/>
-                </SvgCont>              
+                <ArrowRightOutlined />
               </NavArrow>
             </NavPaginate>
           </Col>

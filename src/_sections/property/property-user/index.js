@@ -15,7 +15,7 @@ export default ()=> {
   return(
     <MainCont>
       <Container>
-        <Row>
+        <Row gutterWidth={0}>
           <Col xs={12} md={6}>
             <Property description={state} />
           </Col>

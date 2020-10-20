@@ -1,49 +1,50 @@
 import React, { useContext } from 'react';
-import OfficeContext from '../../_context';
 import styled from 'styled-components';
-import { Container } from 'react-grid-system';
+import { Container, Row, Col } from 'react-grid-system';
+import Context from '../../_context';
 
-const HeroCont = styled.div`
-  /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(${props => props.theme.news.hero.background });
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;*/
+const MainCont = styled.section`
+    background-image: url(${props => props.theme.about.hero.background});
+    background-size: cover;
+    background-repeat: no-repeat;
 `
-const InnerCont = styled.div`
-  //height: 50vh;
+const TitleCont = styled.div`
+  position: relative;
+  height: calc(100vh - 81px);
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+`
+const Title = styled.h1`
+  position: relative;
+  //color: #fff;
+  padding: 1rem;
+  text-align: left;
   margin: 0;
-  padding: 2rem;
-  background-color: ${props => props.theme.main.primaryColor};
-  @media(min-width: 768px){
+  width: 100%;
+  font-weight: 300;
+  @media(min-width: 576px){
+    text-align: left;
+    width: 70vw;
   }
 `
-const HeroTitle = styled.h1`
-  color: #fff;
-  font-weight: 300;
-  font-size: 36px;
-  width: 100%;
-  text-align: left;
-  @media(min-width: 768px){
-    text-align: left;
-    font-size: 50px;
-    width: 50%;
-  }  
+const Image = styled.img`
+  width: 50vw;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 `
 
-export default ()=>{
-  const state = useContext(OfficeContext);
+export default ()=> {
   return(
-    <HeroCont>
+    <MainCont>
       <Container>
-        <InnerCont>
-          <HeroTitle>
-            {state.news.hero.title}
-          </HeroTitle>      
-        </InnerCont>
+        <TitleCont>
+          <Title>
+            Noticias
+          </Title>
+        </TitleCont>        
       </Container>
-    </HeroCont>
+    </MainCont>
   )
 }

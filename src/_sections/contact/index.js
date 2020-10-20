@@ -48,11 +48,11 @@ const ImgCaptcha = styled.img`
   margin-bottom: 1rem;
 `
 const MailSpan = styled.span`
-  color: ${props => props.theme.main.primaryColor};
+  color: #fff;
   text-decoration: underline;
 `
 const SubTitleFooter = styled(SubTitle)`
-  margin-top: 4rem;
+  color: #fff;
 `
 const ButtonContainer = styled.div`
    //margin-top: 32px;
@@ -65,7 +65,6 @@ const ButtonContainer = styled.div`
 `
 const Map = styled.img`
   width: 100%;
-  height: 794px;
 `
 
 export default ()=> {
@@ -74,61 +73,71 @@ export default ()=> {
     <Container>
       <MainCont>
         <Row nogutter>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={12}>
             <Title>
               ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
             </Title>
             <Form onSubmit={e=> e.preventDefault()}>
-              <Row align="center">
-                <Col xs={12}>
-                  <Input
-                    placeholder="Nombre"
-                    id="name"
-                    gray
-                    vertical  
-                  />
+              <Row>
+                <Col xs={12} md={6}>
+                  <Row>
+                    <Col xs={12}>
+                      <Input
+                        placeholder="Nombre"
+                        id="name"
+                        //gray
+                        vertical  
+                      />
+                    </Col>
+                    <Col xs={12}>
+                      <Input
+                        placeholder="Teléfono"
+                        id="phone"
+                        //gray
+                        vertical  
+                      />                                    
+                    </Col>                
+                    <Col xs={12}>
+                      <Input
+                        placeholder="Email"
+                        id="email"
+                        //gray
+                        vertical  
+                      />                                            
+                    </Col>
+                    <Col xs={12}>
+                      <ButtonContainer>
+                        <Button block rounded>Enviar</Button>
+                      </ButtonContainer>                  
+                    </Col>                              
+                  </Row>
+                </Col>    
+                <Col xs={12} md={6}>
+                  <Row>
+                    <Col xs={12}>
+                      <Textarea
+                        placeholder="Mensaje"
+                        id="message"
+                        gray
+                        rows={7}
+                        vertical  
+                      />                  
+                    </Col>
+                    <Col xs={12}>
+                      <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
+                    </Col>       
+                    <Col xs={12}>
+                      <SubTitleFooter>
+                        También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+                      </SubTitleFooter>                                                              
+                    </Col>
+                  </Row>
                 </Col>
-                <Col xs={12}>
-                  <Input
-                    placeholder="Email"
-                    id="email"
-                    gray
-                    vertical  
-                  />                                            
-                </Col>
-                <Col xs={12}>
-                  <Input
-                    placeholder="Teléfono"
-                    id="phone"
-                    gray
-                    vertical  
-                  />                                    
-                </Col>
-                <Col xs={12}>
-                  <Textarea
-                    placeholder="Mensaje"
-                    id="message"
-                    gray
-                    rows={7}
-                    vertical  
-                  />                  
-                </Col>
-                <Col xs={12}>
-                  <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
-                </Col>
-                <Col xs={12}>
-                  <ButtonContainer>
-                    <Button block rounded>Enviar</Button>
-                  </ButtonContainer>                  
-                </Col>                                                                          
               </Row>
             </Form >        
-            <SubTitleFooter>
-              También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
-            </SubTitleFooter>                                        
           </Col>
-          <Col xs={12} md={6}>
-            <Map src="/square-map.png" />
+          <Col xs={12} md={12}>
+            <Map src="/map.png" />
           </Col>
         </Row>
       </MainCont>

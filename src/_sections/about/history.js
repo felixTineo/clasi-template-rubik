@@ -12,7 +12,8 @@ const HistoryCont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 100%;
+  height: 70vh;
+  margin: 1rem 0;
 `
 const Title = styled.h2`
   color: ${props => props.theme.main.primaryColor};
@@ -20,10 +21,20 @@ const Title = styled.h2`
 const Description = styled.div`
 
 `
+const ImageContainer = styled.div`
+  position: relative;
+  height: 250px;
+  margin-top: 4rem;
+  background-color:  ${props => props.theme.main.primaryColor};
+  @media(min-width: 768px){
+    height: 100%;
+    margin-top: 0;
+  }
+`
 const Image = styled.img`
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
+  width: 90%;
+  position: absolute;
+  bottom: -5px;
 `
 
 
@@ -33,7 +44,7 @@ export default ()=> {
     <MainCont>
       <Container>
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={5}>
             <HistoryCont>
               <Title>
                 {state.history.title}
@@ -41,8 +52,10 @@ export default ()=> {
               <Description dangerouslySetInnerHTML={{__html: state.history.description}} />
             </HistoryCont>
           </Col>
-          <Col xs={12} md={6}>
-            <Image src="/history-image.jpg" alt="historia" />
+          <Col xs={12} md={7}>
+            <ImageContainer>
+              <Image src="/phone.png" alt="historia" />
+            </ImageContainer>
           </Col>                    
         </Row>
       </Container>

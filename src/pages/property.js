@@ -11,7 +11,6 @@ import Interaction from '../_sections/property/interaction-buttons';
 export default ()=> (
   <Layout>
     <Hero />
-    <Interaction />
     <PropertyUser />
     <Ubication />
     <Properties noMargin />

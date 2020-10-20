@@ -68,7 +68,7 @@ export default ()=> {
           </Col>
           {
             state.members.map(m => (
-              <Col xs={12} md={6} key={m.id}>
+              <Col xs={12} md={3} key={m.id}>
                 <Card>
                   <Avatar src={m.avatar} alt={m.lastName} />
                   <Name>{m.firstName + " " + m.lastName}</Name>

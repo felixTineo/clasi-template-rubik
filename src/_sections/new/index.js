@@ -4,65 +4,15 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { NewsCard } from '../../_components/cards';
 
-const TitleCont = styled.div`
-  position: relative;
-  height: calc(100vh - 87px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ::before{
-    content: " ";
-    background-image: url(${props => props.theme.singleNew.hero.background});
-    background-size: cover;
-    background-position: center;
-    width: 60vw;
-    height: 50%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    @media(min-width: 576px){
-      height: 100%;
-      width: 50vw;
-      top: 0;
-      right: 0;
-    }
-  }
-`
-const Title = styled.h1`
-  position: relative;
-  color: #fff;
-  padding: 1rem;
-  text-align: left;
-  margin: 0;
-  width: 100%;
-  ::before{
-    content: " ";
-    background-color: ${props => props.theme.main.primaryColor};
-    opacity: .7;
-    width: 100%;
-    height: 60vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    @media(min-width: 576px){
-      height: 100%;
-    }
-  }
-  @media(min-width: 576px){
-    text-align: left;
-    width: 70vw;
-    padding: 4rem 2rem;
-  }
-`
-
 const MainCont = styled.article`
 
 `
 const Header = styled.header`
-  //background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props => props.theme.singleNew.hero.background});
+  background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props => props.theme.singleNew.hero.background});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: #fff;
 `
 const InnerHeader = styled.div`
     min-height: 60vh;
@@ -73,7 +23,7 @@ const InnerHeader = styled.div`
 `
 const HeaderTitle = styled.h1`
   margin-top: 0;
-  color: ${props => props.theme.main.primaryColor};
+  max-width: 50%;
 `
 const HeaderDateContainer = styled.div`
   display: flex;
@@ -87,24 +37,19 @@ const Tag = styled.p`
   padding: 5px 19px;
   border-radius: 20px;
   background: ${props => props.theme.main.primaryColor};
-  color: #fff;
+  color: "#ffffff";
   user-select: none;
-`
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 `
 const IntroCont = styled.div`
   padding: 4rem 0 0;
 `
 const IntroFooter = styled.div`
+  border-top: 1px solid #dadada;
+  border-bottom: 1px solid #dadada;
   margin: 4rem 0;
-  padding: 2rem;
+  padding: 2rem 0;
   color: ${props => props.theme.main.primaryColor};
-  font-style: italic;
-  //background-color: ${props => props.theme.main.primaryColor};
+  font-weight: bold;
 `
 const SocialCont = styled.ul`
   list-style: none;
@@ -131,7 +76,6 @@ const SocialNav = styled.a`
 `
 const SocialSpan = styled.span`
   opacity: 0;
-  color: ${props => props.theme.main.primaryColor};
   transition: 250ms ease;
   ${SocialNav}:hover & {
     opacity: 1;
@@ -149,7 +93,6 @@ const RelatedNewsCont = styled.div`
 const RelatedNewsTitle = styled.div`
   margin: 4rem 0;
   font-weight: bold;
-  color: ${props => props.theme.main.primaryColor};
 `
 
 export default ()=> {
@@ -158,14 +101,21 @@ export default ()=> {
   return(
     <MainCont>
       <Header>
-      <Container>
-        <TitleCont>
-          <Title>
-            <span style={{ zIndex: 5, position: "relative", width: "50%", display:"inline-block" }}>{state.hero.title}</span>
-          </Title>
-        </TitleCont>        
-              {/*<Image src={state.hero.background} alt={state.hero.title} />*/}
-      </Container>
+        <Container>
+          <InnerHeader>
+          <HeaderTitle>
+            {state.hero.title}
+          </HeaderTitle>
+          <HeaderDateContainer>
+            <HeaderDate>
+              {state.hero.date}
+            </HeaderDate>
+            <Tag>
+              {state.hero.tag}
+            </Tag>
+          </HeaderDateContainer>
+          </InnerHeader>
+        </Container>
       </Header>
       <IntroCont>
         <Container>

@@ -67,13 +67,10 @@ const SvgCont = styled.svg`
 const NavCont = styled.nav`
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
-  background-color: ${props => props.theme.main.primaryColor};
-  padding: 0 2rem 3rem;
-  color: #fff;
+  margin: 2rem 0;
 `
 const NavTitle = styled.span`
-  
+  color: #919191;
 `
 const NavList = styled.ul`
   list-style: none;
@@ -82,10 +79,10 @@ const NavList = styled.ul`
   display: flex;
 `
 const NavOption = styled.button`
-  background-color: ${props => props.active ? "#fff" : "transparent"};
+  background-color: ${props => props.active ? props.theme.main.primaryColor : "transparent"};
   transition: 250ms ease;
   //box-shadow: ${props => props.active ? "0px 1px 1px rgba(0, 0, 0, .12), 0px 2px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px -1px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)" : "none"};
-  color: ${props => props.active ? props.theme.main.primaryColor : "#fff"};
+  color: ${props => props.active ? "#fff" : "#000"};
   border: none;
   cursor: pointer;
   width: 58px;

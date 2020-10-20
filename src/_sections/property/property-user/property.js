@@ -5,11 +5,9 @@ import InteractionButtons from '../interaction-buttons';
 import Icons from '../../../_icons';
 
 const MainCont = styled.div`
-  padding: 2rem;
-  //border: 1px solid #EBEBEB;
-  height: 100%;
+  padding: 2rem 1rem;
+  border: 1px solid #EBEBEB;
   border-right: none;
-  //background-color: ${props => props.theme.main.primaryColor};
 `
 const PublicObs = styled.p`
   font-weight: bold;
@@ -21,9 +19,6 @@ const CharsCont = styled.ul`
   padding: 0;
   margin: 0;
   margin: 2rem 0;
-`
-const CharTitle = styled.h2`
-  color: ${props => props.theme.main.primaryColor};
 `
 const CharItemLi = styled.li`
   display: flex;
@@ -51,8 +46,16 @@ export default ({ description })=> {
   return(
     <MainCont>
       <Row>
+        <Hidden xs>
+         <InteractionButtons />
+        </Hidden>
         <Col xs={12}>
-          <CharTitle>Caracteristicas</CharTitle>
+          <PublicObs>
+            {description.publicObservation}              
+          </PublicObs>
+        </Col>
+        <Col xs={12}>
+          <h2 style={{ color: "#002438" }}>Caracteristicas</h2>
           <Row>
             <Col xs={12} md={6}>
               <CharsCont>
@@ -71,7 +74,7 @@ export default ({ description })=> {
           </Row>
         </Col>
         <Col xs={12}>
-          <CharTitle>Otros servicios</CharTitle>
+          <h2 style={{ color: "#002438" }}>Otros servicios</h2>
           <Row>
             <Col xs={12} md={6}>
               <CharsCont>

@@ -15,10 +15,10 @@ export default ()=> {
     <MainCont>
       <Container>
         <Row gutterWidth={0}>
-          <Col xs={12} md={6} push={{ md:6 }}>
-            <Gallery images={state.images} />                   
+          <Col xs={12} md={6}>
+            <Gallery images={state.images} />
           </Col>
-          <Col xs={12} md={6} pull={{ md: 6 }}>     
+          <Col xs={12} md={6}>
             <Description description={state} />
           </Col>
         </Row>
