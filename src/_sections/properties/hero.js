@@ -69,10 +69,10 @@ export default ()=> {
       <VeryMainCont>
         <Container>
         <MainCont>
-          <Title>
+          <Title className="animate__animated animate__fadeInUp">
             {state.home.hero.title}
           </Title>
-          <FormProperty shadow />
+          <FormProperty shadow className="animate__animated animate__fadeIn" />
           <DownButton href="#properties">
             <RateBar />
   {/*          <SvgCont width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

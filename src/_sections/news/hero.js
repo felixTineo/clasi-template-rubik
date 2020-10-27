@@ -46,7 +46,7 @@ export default ()=> {
     <MainCont>
       <Container>
         <TitleCont>
-          <Title>
+          <Title className="animate__animated animate__fadeInUp">
             Noticias
           </Title>
         </TitleCont>        

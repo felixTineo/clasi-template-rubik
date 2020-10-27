@@ -4,6 +4,7 @@ import data from '../_context/state';
 import styled, { ThemeProvider } from 'styled-components';
 import Header from './header';
 import Footer from './footer';
+import 'animate.css';
 
 const Layout = styled.div`
   overflow: hidden;

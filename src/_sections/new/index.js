@@ -103,10 +103,10 @@ export default ()=> {
       <Header>
         <Container>
           <InnerHeader>
-          <HeaderTitle>
+          <HeaderTitle className="animate__animated animate__fadeInUp">
             {state.hero.title}
           </HeaderTitle>
-          <HeaderDateContainer>
+          <HeaderDateContainer className="animate__animated animate__fadeIn animate__delay-1s">
             <HeaderDate>
               {state.hero.date}
             </HeaderDate>

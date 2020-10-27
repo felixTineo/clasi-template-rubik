@@ -10,6 +10,7 @@ const Form = styled.form`
   border-radius: 6px;
   padding: 0 15px;
   margin-bottom: 1rem;
+  animation-delay: 1s;
   @media(min-width: 768px){
     width: ${props => props.block ? "100%" : "80%"};
     padding: 0;
@@ -20,10 +21,10 @@ const Form = styled.form`
   }  
 `
 
-export default ({ block, shadow })=> {
+export default ({ block, shadow, className })=> {
 
   return(
-    <Form onSubmit={(e) => e.preventDefault()} block={block} shadow={shadow}>
+    <Form onSubmit={(e) => e.preventDefault()} block={block} shadow={shadow} className={className}>
       <Row gutterWidth={32} align="center">
         <Col xs={12} md={2}>
           <Select
