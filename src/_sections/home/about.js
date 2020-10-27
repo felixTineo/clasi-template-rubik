@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Row, Col, Container, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import { ServiceCarousel, ReviewCarousel } from '../../_components/carousels';
+import { navigate } from 'gatsby';
 
 const MainCont = styled.section`  
   position: relative;
@@ -101,7 +102,7 @@ export default ()=> {
                 <Description>
                   {state.about.banner.subTitle}
                 </Description>
-                <Button block primary>
+                <Button block primary onClick={()=> navigate("/about")}>
                   {state.about.banner.buttonText}
                 </Button>
               </DescriptionCont>

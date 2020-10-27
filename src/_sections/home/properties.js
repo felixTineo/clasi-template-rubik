@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { PropertyCarousel } from '../../_components/carousels';
 import { Rectangular } from '../../_components/banners';
+import { navigate } from 'gatsby';
 
 const MainCont = styled.section`
   min-height: 100vh;
@@ -42,6 +43,7 @@ export default ({ noMargin })=> {
               buttonText={state.buttonText}
               title={state.footer}
               icon="/icons/marker.svg"
+              onClick={()=> navigate("/properties")}
             />
           </Col>
         </Row>

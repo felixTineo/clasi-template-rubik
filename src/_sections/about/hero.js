@@ -7,13 +7,22 @@ const MainCont = styled.section`
     background-image: url(${props => props.theme.about.hero.background});
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    @media(min-width: 768px){
+      background-position-y: -100px;
+      background-position-x: 100px;
+    }
 `
 const TitleCont = styled.div`
   position: relative;
-  height: calc(100vh - 81px);
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  @media(min-width: 768px){
+    height: calc(100vh - 81px);
+  }
 `
 const Title = styled.h1`
   position: relative;
@@ -25,7 +34,7 @@ const Title = styled.h1`
   font-weight: 300;
   @media(min-width: 576px){
     text-align: left;
-    width: 70vw;
+    width: 60vw;
   }
 `
 const Image = styled.img`

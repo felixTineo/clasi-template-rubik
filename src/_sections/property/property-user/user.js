@@ -111,21 +111,21 @@ export default ()=> {
           <Col xs={12} md={12}>
             <ContactFormButtons>
               <Button primary block>
-                LLamar por teléfono
+                Enviar
               </Button>
             </ContactFormButtons>
           </Col>          
           <Col xs={12} md={12}>
             <ContactFormButtons>
               <Button outlined block>
-                LLamar por teléfono
+                LLamar
               </Button>
             </ContactFormButtons>
           </Col>
           <Col xs={12} md={12}>
             <ContactFormButtons>
               <Button outlined block>
-                Enviar whatsapp
+                whatsapp
               </Button>
             </ContactFormButtons>
           </Col>          

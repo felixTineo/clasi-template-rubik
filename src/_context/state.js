@@ -10,16 +10,16 @@ export default {
     id: "5e8e36b31c9d440000d35090",
     name: "ClasiHome",
     email: "clasi@clasihome.cl",
-    address: "Av. La Dehesa 1939, Of. 607 - 608",
+    address: "Aquí el texto de tu empres",
     phone: {
       countryCode: "+56",
-      areaCode: "9",
-      phoneNumber: "2243 5999"
+      areaCode: "2",
+      phoneNumber: "1234 1234"
     },
     mobile: {
       countryCode: "+56",
       areaCode: "9",
-      phoneNumber: "9873 9972"
+      phoneNumber: "1234 1234"
     },      
   },
   main:{
@@ -39,9 +39,10 @@ export default {
     },
     properties:{
       visible: true,
-      title: "Contamos con una seleción exclusiva de propiedades.",
+      title: "Contamos con una selección exclusiva de propiedades.",
       footer: "Estas son solo algunas de las propiedades que tenemos para ofrecerte",
-      buttonText: "Ver todas las propiedades",
+      bannerImage: "",
+      buttonText: "Ver más",
       items:[
         {
           id: uuid(),
@@ -339,7 +340,7 @@ export default {
         image: '/about-description.jpg',
         title: "Somos una empresa con mas de 20 años en el rubro del corretaje inmobiliario",
         subTitle: "Esto nos permite entender mejor que nadie las necesidades de nuestros clientes, por eso ponemos el foco en que la experienca de compra o arriendo sea única",
-        buttonText: "Conocénos",
+        buttonText: "Conózcanos",
       },
     },
     services:{
@@ -382,15 +383,15 @@ export default {
       items:[
         {
           review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate sapien at nisi volutpat dictum. Maecenas vel lorem tellus. Sed sit amet sollicitudin nisi. Sed consectetur eget orci sit amet condimentum.',
-          author:'Adrian Carcamo - Clasihome'
+          author:'Cliente 1'
         },
         {
           review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate sapien at nisi volutpat dictum. Maecenas vel lorem tellus. Sed sit amet sollicitudin nisi. Sed consectetur eget orci sit amet condimentum.',
-          author:'Elon musk - Space-x'
+          author:'Cliente 2'
         },
         {
           review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate sapien at nisi volutpat dictum. Maecenas vel lorem tellus. Sed sit amet sollicitudin nisi. Sed consectetur eget orci sit amet condimentum.',
-          author:'Montgomery burns - Planta nuclear de springfield'
+          author:'Cliente 3'
         },     
       ],
     },
@@ -403,7 +404,7 @@ export default {
   about:{
     hero:{
       visible: true,
-      title: "Un equipo de profesionales especializado en el sector inmobiliario.",
+      title: "Un equipo de profesionales especializados en el sector inmobiliario.",
       background: '/about-hero.jpg',
     },
     history:{
@@ -467,45 +468,45 @@ export default {
       members:[
         {
           id: uuid(),
-          firstName: "Adrian",
-          lastName: "Carcamo",
+          firstName: "Usuario",
+          lastName: "1",
           description: "Ingeniero Comercial, Master en Finanzas. Inversor inmobiliario, con 6 años de experiencia en Banca, Mesa de Dinero. 6 años en el corretaje de propiedades, especializado en el manejo de cartera de propiedades. ",
           avatar: "/team-member-1.jpg",
-          email:"acarcamo@clasihome.cl",
+          email:"usuario1@example.com",
           phone: "+56 9 5555 5555"
         },
         {
           id: uuid(),
-          firstName: "Roberto",
-          lastName: "Gajardo",
+          firstName: "Usuario",
+          lastName: "2",
           description: "Ingeniero Comercial, Master en Finanzas. Inversor inmobiliario, con 6 años de experiencia en Banca, Mesa de Dinero. 6 años en el corretaje de propiedades, especializado en el manejo de cartera de propiedades. ",
           avatar: "/team-member-2.jpg",
-          email:"rgajardo@clasihome.cl",
+          email:"usuario2@example.com",
           phone: "+56 9 5555 5555"
         },
         {
           id: uuid(),
-          firstName: "Juan",
-          lastName: "Llopis",
+          firstName: "Usuario",
+          lastName: "3",
           description: "Ingeniero Comercial, Master en Finanzas. Inversor inmobiliario, con 6 años de experiencia en Banca, Mesa de Dinero. 6 años en el corretaje de propiedades, especializado en el manejo de cartera de propiedades. ",
           avatar: "/team-member-3.jpg",
-          email:"jllopis@clasihome.cl",
+          email:"usuario3@example.com",
           phone: "+56 9 5555 5555"
         },
         {
           id: uuid(),
-          firstName: "Romulo",
-          lastName: "Ricondo",
+          firstName: "Usuario",
+          lastName: "4",
           description: "Ingeniero Comercial, Master en Finanzas. Inversor inmobiliario, con 6 años de experiencia en Banca, Mesa de Dinero. 6 años en el corretaje de propiedades, especializado en el manejo de cartera de propiedades.  ",
           avatar: "/team-member-4.jpg",
-          email:"rricondo@clasihome.cl",
+          email:"usuario4@example.com",
           phone: "+56 9 5555 5555"
         },                        
       ]
     },
     ubication:{
       visible: true,
-      title: "Encuentrenos en Sucursal Chicureo Camino a Chicureo 2 km. esquina Los Ingleses Colina - Santiago",
+      title: "Encuéntranos en Sucursal Chicureo Camino a Chicureo 2 km. esquina Los Ingleses Colina - Santiago",
       location:{
         coordinates:["0", "0"],
       }

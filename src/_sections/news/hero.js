@@ -7,6 +7,12 @@ const MainCont = styled.section`
     background-image: url(${props => props.theme.about.hero.background});
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-y: 0px;
+    background-position-x: 0px;
+    @media(min-width: 768px){
+      background-position-y: -100px;
+      background-position-x: 100px;
+    }
 `
 const TitleCont = styled.div`
   position: relative;
