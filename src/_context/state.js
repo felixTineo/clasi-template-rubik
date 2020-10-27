@@ -753,7 +753,7 @@ export default {
  singleNew:{
    hero:{
      visible: true,
-     background: "/new-hero.jpg",
+     background: '/about-description.jpg',
      title: "¿Qué documentos necesito para vender mi propiedades?",
      tag: "legales",
      date: "Agosto 24, 2020",
