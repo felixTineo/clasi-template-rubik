@@ -581,7 +581,7 @@ export default {
     value: "75.000",
     ubication:{
       region: "Rosario",
-      commune: "Casorra Alzamona",
+      commune: "Casorra alzamona",
       location:{
         coordinates: ["0", "0"],
       }

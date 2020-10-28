@@ -125,7 +125,7 @@ export default ()=> {
           <Col xs={12} md={12}>
             <ContactFormButtons>
               <Button outlined block>
-                whatsapp
+                Whatsapp
               </Button>
             </ContactFormButtons>
           </Col>          
