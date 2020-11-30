@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Container, Row, Col, Hidden, Visible } from 'react-grid-system';
 import Contact from '../home/contact';
 import ContactLight from './contact';
+import Map from '../../_components/map';
 
 const MainCont = styled.section`
   padding: 4rem 0;
@@ -20,15 +21,10 @@ const Title = styled.p`
   align-items: center;
   //font-size: 2rem;
 `
-const Map = styled.img`
-  width: 100%;
-  height: 304px;
-  object-position: center;
-  object-fit: cover;
-`
 
 export default ({ noContact })=> {
   const state = useContext(Context).about.ubication;
+  const { lat, lng } = useContext(Context).office;
   return(
     <Container>
     <MainCont>
@@ -39,7 +35,16 @@ export default ({ noContact })=> {
           </Title>
         </Col>
         <Col xs={12} >
-          <Map src="/map.png" />          
+          {
+            lat && (
+              <Map
+              lat={parseFloat(lat)}
+              lng={parseFloat(lng)}
+              height={300}
+              zoom={3}
+            />         
+            )
+          } 
         </Col>        
       </Row>
       {

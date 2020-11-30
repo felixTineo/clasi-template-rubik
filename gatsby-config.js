@@ -13,6 +13,12 @@ module.exports = {
         displayName: false
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-leaflet',
+      options: {
+        linkStyles: true // (default: true) Enable/disable loading stylesheets via CDN
+      }
+    },        
     /*{
       resolve: "gatsby-plugin-prefetch-google-fonts",
       options: {

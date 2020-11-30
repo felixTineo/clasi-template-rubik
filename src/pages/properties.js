@@ -4,10 +4,10 @@ import Hero from '../_sections/properties/hero';
 import Properties from '../_sections/properties/properties';
 import Reviews from '../_sections/properties/reviews';
 
-export default ()=> (
+export default ({ location })=> (
   <Layout>
     <Hero />
-    <Properties />
+    <Properties location={location} />
     <Reviews />
   </Layout>
 )

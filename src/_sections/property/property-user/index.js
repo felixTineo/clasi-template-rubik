@@ -10,8 +10,8 @@ const MainCont = styled.div`
 
 `
 
-export default ()=> {
-  const state = useContext(Context).singleProperty;
+export default ({ state })=> {
+  //const state = useContext(Context).singleProperty;
   return(
     <MainCont>
       <Container>

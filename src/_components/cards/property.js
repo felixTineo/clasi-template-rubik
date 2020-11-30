@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import context from '../../_context';
 import Link from '../link';
 import styled from 'styled-components';
+import { truncate } from '../../_util';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -8,7 +10,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 460px;
+  height: 500px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   width: 100%;
@@ -27,7 +29,7 @@ const CardCont = styled.div`
   }
 `
 const CardImage = styled.div`
-  background-image: url(${props => props.src});
+  background-image: url("${props => props.src}");
   background-position: center;
   background-size: cover;
   background-repeat: none;
@@ -85,14 +87,17 @@ export default ({
   code,
   ubication,
   characteristics,
+  _id,
 })=> {
+  const builderId = useContext(context).builderId;
+
   return(
-    <Link to="/property" title="Ver propiedad">
+    <Link to={`/property?builderId=${builderId}&propertyId=${_id}`} title="Ver propiedad">
     <CardCont>
       <CardImage src={mainImage} />
       <CardInfo>
         <CardTitleCont>
-          <CardTitle>{title}</CardTitle>
+          <CardTitle>{truncate(title, 30)}</CardTitle>
           <CardPrice>UF ${value}</CardPrice>
           <li style={{ margin: "1rem 0" }}>
             <CardOperation>Venta - </CardOperation>
@@ -100,7 +105,7 @@ export default ({
           </li>
         </CardTitleCont>
         <CardCharacteristics>
-          <CharItem>{ubication.address}</CharItem>
+          <CharItem>{truncate(ubication.address, 30)}</CharItem>
           {
             characteristics.slice(0, 2).map((char, index) => (
               <CharItem key={index}>

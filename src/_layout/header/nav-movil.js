@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import context from '../../_context';
 import styled from 'styled-components';
 import Logo from './logo';
 import Link from '../../_components/link';
@@ -80,7 +81,7 @@ const LogoCont = styled.div`
 
 export default ()=> {
   const [visibleNav, setVisibleNav] = useState(false);
-
+  const builderId = useContext(context);
   useEffect(()=> {
     if(visibleNav){
       gsap.to("#nav-movil", { duration: .25, left: 0 });
@@ -103,14 +104,14 @@ export default ()=> {
         <NavBar>
           <Container>
           <NavItem>
-            <Link to="/about">
+            <Link to={`/about?builderId=${builderId}`}>
               <NavLink>
                 Nosotros
               </NavLink>
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/properties">
+            <Link to={`/properties?builderId=${builderId}`}>
               <NavLink>
                 Propiedades
               </NavLink>
@@ -124,7 +125,7 @@ export default ()=> {
             </Link>
           </NavItem> */}
           <NavItem>
-            <Link to="/contact">
+            <Link to={`/contact?builderId=${builderId}`}>
               <NavLink noMargin>
                 Contacto
               </NavLink>
